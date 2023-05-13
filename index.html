@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>VsaWebChatWidget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="luma-web-widget.css" rel="stylesheet" type="text/css">
+  <style>
+  .luma-chat-toggle {
+    position: fixed;
+    background: #FFF;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06), 0 2px 32px rgba(0,0,0,0.16);
+    cursor: pointer;
+  }
+  </style>
+</head>
+
+<body>
+    <div id='botHere'></div>
+    <div class="luma-chat-toggle" onclick="toggleChatWidget()">
+      <i class="bot-icon"></i>
+    </div>
+    <script type="text/javascript" src="luma-web-widget.js"></script>
+    <script>
+      LumaBot({
+          botName: "Luma Prod Pichincha",
+          user: {
+            clientUserId: 'luis.huallpa@clarity.pe',
+            additionalProperties: {
+            }
+          },
+          secretkey: 'sOQfST/muHYPez+7XU1BnB/ituvTF5dviROuRtNybN64FPVgIYsVbh76CmTP9nJ781lO1KVLz6uwjqngsWD3bIf/s+7iRyR8eWtt2EKZ1WBweBxMIJg83ajirf85JqAsIKAARMiVFq9/zYiC5AJoS1J/PrvtD4m7IMf+meFpXcis4e4Qrj+PzH7vw510/EDaIKpn+d8SM9kJrVVaRGcZy/0+22t9dnmHD5SfD6+xsLDNsve09ViH8r+94KYdOy8J7cpvmXXTH0ZAgvzbz8w1AQ==',
+          domain: "https://lumapro.serviceaide.com",
+          styleOptions: {
+            lumaChatContainer: {
+              width: '400px'
+            }
+          }
+        },
+        document.getElementById("botHere"));
+        function toggleChatWidget() {
+          LumaBot.toggleChatWidget();
+        }
+    </script>
+</body>
+
+</html>
